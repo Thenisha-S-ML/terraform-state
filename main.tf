@@ -1,3 +1,13 @@
+terraform {
+  backend "s3" {
+    bucket         = "jhooq-terraform-bucket"
+    key            = "terraform/state.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+  }
+}
+
+
 provider "aws" {
    region     = "us-east-1"
    access_key = var.access_key
